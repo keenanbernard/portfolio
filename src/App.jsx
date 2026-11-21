@@ -269,16 +269,16 @@ export default function App() {
           <div style={{
             display: 'flex', justifyContent: 'center', alignItems: 'flex-end',
             gap: 20, padding: '56px 32px 0', background: '#1d1d1f',
-            height: '100%', minHeight: 520,
+            height: '100%', minHeight: 'clamp(300px, 80vw, 520px)',
           }}>
-            <div style={{ width: 230, height: 470, borderRadius: 44, background: '#000', padding: 10, boxShadow: '0 0 0 1px #3a3a3c', transform: 'translateY(-30px)' }}>
-              <div style={{ position: 'relative', width: '100%', height: '100%', borderRadius: 34, overflow: 'hidden', background: '#2c2c2e' }}>
+            <div style={{ width: 'calc(50% - 10px)', maxWidth: 230, aspectRatio: '230 / 470', borderRadius: 'clamp(24px, 10vw, 44px)', background: '#000', padding: 10, boxShadow: '0 0 0 1px #3a3a3c', transform: 'translateY(-30px)', flexShrink: 0 }}>
+              <div style={{ position: 'relative', width: '100%', height: '100%', borderRadius: 'clamp(16px, 7vw, 34px)', overflow: 'hidden', background: '#2c2c2e' }}>
                 <img src="/digigo-1.webp" alt="DigiGo home screen" width="1320" height="2868" loading="lazy"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
             </div>
-            <div style={{ width: 230, height: 470, borderRadius: 44, background: '#000', padding: 10, boxShadow: '0 0 0 1px #3a3a3c', transform: 'translateY(10px)' }}>
-              <div style={{ position: 'relative', width: '100%', height: '100%', borderRadius: 34, overflow: 'hidden', background: '#2c2c2e' }}>
+            <div style={{ width: 'calc(50% - 10px)', maxWidth: 230, aspectRatio: '230 / 470', borderRadius: 'clamp(24px, 10vw, 44px)', background: '#000', padding: 10, boxShadow: '0 0 0 1px #3a3a3c', transform: 'translateY(10px)', flexShrink: 0 }}>
+              <div style={{ position: 'relative', width: '100%', height: '100%', borderRadius: 'clamp(16px, 7vw, 34px)', overflow: 'hidden', background: '#2c2c2e' }}>
                 <img src="/digigo-2.webp" alt="DigiGo usage screen" width="1320" height="2868" loading="lazy"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
