@@ -204,7 +204,7 @@ export default function App() {
             </div>
           </div>
           <div style={{ background: '#fff', padding: '32px 24px' }}>
-            <div style={{ fontSize: 40, fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 1 }}>iOS + Android</div>
+            <div style={{ fontSize: 'clamp(28px, 8vw, 40px)', fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 1 }}>iOS + Android</div>
             <div style={{ marginTop: 10, color: '#6e6e73', fontSize: 15 }}>DigiGo, shipped to both stores</div>
           </div>
           <div style={{ background: '#fff', padding: '32px 24px' }}>
@@ -291,7 +291,7 @@ export default function App() {
           <article className="reveal card-lift" style={{ background: '#f5f5f7', borderRadius: 32, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
             <div style={{ padding: 'clamp(28px,4vw,48px) clamp(28px,4vw,48px) 0' }}>
               <div style={{ fontFamily: mono, fontSize: 12, letterSpacing: '0.08em', color: '#6e6e73' }}>WEBSITE · FOOD · BELMOPAN</div>
-              <h3 style={{ margin: '14px 0 0', fontSize: 40, fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 1.05 }}>From My Oven</h3>
+              <h3 style={{ margin: '14px 0 0', fontSize: 'clamp(28px, 8vw, 40px)', fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 1.05 }}>From My Oven</h3>
               <p style={{ margin: '14px 0 0', fontSize: 17, lineHeight: 1.55, color: '#424245' }}>
                 Pizza Friday in Belmopan. Four pizzas made from scratch, a menu, catering and gallery, an order-by-noon flow for Friday pick-up.
               </p>
@@ -315,7 +315,7 @@ export default function App() {
           <article className="reveal card-lift" style={{ '--reveal-delay': '60ms', background: '#f5f5f7', borderRadius: 32, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
             <div style={{ padding: 'clamp(28px,4vw,48px) clamp(28px,4vw,48px) 0' }}>
               <div style={{ fontFamily: mono, fontSize: 12, letterSpacing: '0.08em', color: '#6e6e73' }}>WEBSITE · ELECTRICAL CONTRACTOR</div>
-              <h3 style={{ margin: '14px 0 0', fontSize: 40, fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 1.05 }}>Bernard's Electrical Solutions</h3>
+              <h3 style={{ margin: '14px 0 0', fontSize: 'clamp(28px, 8vw, 40px)', fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 1.05 }}>Bernard's Electrical Solutions</h3>
               <p style={{ margin: '14px 0 0', fontSize: 17, lineHeight: 1.55, color: '#424245' }}>
                 Consultation, installation and repair for homes and businesses across Belize. Services, process and past work, with a one-tap call to book.
               </p>
@@ -341,7 +341,7 @@ export default function App() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 460px), 1fr))', gap: 24, marginTop: 24 }}>
           <article className="reveal card-lift" style={{ background: '#000', color: '#fff', borderRadius: 32, padding: 'clamp(28px,4vw,48px)', display: 'flex', flexDirection: 'column', gap: 20, minHeight: 420 }}>
             <div style={{ fontFamily: mono, fontSize: 12, letterSpacing: '0.08em', color: '#a1a1a6' }}>AI · RAG CHATBOT</div>
-            <h3 style={{ margin: 0, fontSize: 40, fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 1.05 }}>Ask the company anything.</h3>
+            <h3 style={{ margin: 0, fontSize: 'clamp(28px, 8vw, 40px)', fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 1.05 }}>Ask the company anything.</h3>
             <p style={{ margin: 0, fontSize: 17, lineHeight: 1.55, color: '#d2d2d7' }}>
               A production RAG knowledge base that lets staff query policies in plain language. Document ingestion with OCR fallback, semantic chunking, role-based access through Microsoft sign-in.
             </p>
@@ -367,7 +367,7 @@ export default function App() {
 
           <article className="reveal card-lift" style={{ '--reveal-delay': '60ms', background: '#f5f5f7', borderRadius: 32, padding: 'clamp(28px,4vw,48px)', display: 'flex', flexDirection: 'column', gap: 20, minHeight: 420 }}>
             <div style={{ fontFamily: mono, fontSize: 12, letterSpacing: '0.08em', color: '#6e6e73' }}>AI · MICROSOFT 365 COPILOT AGENT</div>
-            <h3 style={{ margin: 0, fontSize: 40, fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 1.05 }}>Shortlists, not stacks.</h3>
+            <h3 style={{ margin: 0, fontSize: 'clamp(28px, 8vw, 40px)', fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 1.05 }}>Shortlists, not stacks.</h3>
             <p style={{ margin: 0, fontSize: 17, lineHeight: 1.55, color: '#424245' }}>
               A Copilot screening agent that scores candidates and hands HR a ranked shortlist, instead of a pile of CVs.
             </p>
