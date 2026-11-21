@@ -1,0 +1,160 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #1d1d1f;
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+}
+
+a { color: #1d1d1f; text-decoration: none; }
+a:hover { color: #000; }
+
+/* ── Rule 1 & 6: Hero entrance — ease-out, stagger as details settle ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-col > * {
+  animation: fadeUp 580ms ease-out both;
+}
+.hero-col > *:nth-child(1) { animation-delay: 60ms; }
+.hero-col > *:nth-child(2) { animation-delay: 160ms; }
+.hero-col > *:nth-child(3) { animation-delay: 280ms; }
+.hero-col > *:nth-child(4) { animation-delay: 400ms; }
+
+.hero-portrait {
+  animation: fadeUp 680ms ease-out 120ms both;
+}
+
+/* ── Rule 1 & 17: Scroll reveal — ease-out, positional mask ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 480ms ease-out var(--reveal-delay, 0ms),
+    transform 480ms ease-out var(--reveal-delay, 0ms);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Rule 3: Stagger list rows by 30ms ── */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 380ms ease-out calc(var(--i, 0) * 30ms),
+    transform 380ms ease-out calc(var(--i, 0) * 30ms);
+}
+.stagger-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Rule 4: Scale to 0.97 on press. Rule 14: fast so it doesn't tween while held ── */
+.btn-press {
+  transition: transform 100ms ease-out;
+}
+.btn-press:active {
+  transform: scale(0.97);
+  transition-duration: 70ms;
+}
+
+/* ── Rule 9 & 15: Card hover — ease-in-out for moves, exit 20% shorter ── */
+.card-lift {
+  transition: transform 160ms ease-in-out; /* exit */
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  transition-duration: 200ms; /* entrance */
+}
+
+/* ── Mobile nav ── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 14px;
+}
+
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: #000;
+  line-height: 0;
+}
+
+@keyframes menuIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-menu {
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding: 4px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  animation: menuIn 180ms ease-out both;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 16px 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: #1d1d1f;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  text-decoration: none;
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+  margin-top: 12px;
+  background: #000;
+  color: #fff;
+  border-radius: 980px;
+  padding: 14px 20px;
+  text-align: center;
+  font-size: 17px;
+}
+
+@media (max-width: 680px) {
+  .nav-links    { display: none; }
+  .nav-hamburger { display: flex; align-items: center; justify-content: center; }
+}
+
+/* ── Rule 15: Nav link underline — exit 20% shorter, enter from left, exit to right ── */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0; right: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 160ms ease-in-out; /* exit */
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition-duration: 200ms; /* entrance */
+}
