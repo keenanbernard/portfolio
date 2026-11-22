@@ -40,11 +40,11 @@ export default function Nav() {
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
         >
           {menuOpen ? (
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <svg key="close" className="icon-in" width="22" height="22" viewBox="0 0 22 22" fill="none">
               <path d="M5 5l12 12M17 5L5 17" stroke="#000" strokeWidth="1.6" strokeLinecap="round"/>
             </svg>
           ) : (
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <svg key="open" className="icon-in" width="22" height="22" viewBox="0 0 22 22" fill="none">
               <path d="M3 6h16M3 11h16M3 16h16" stroke="#000" strokeWidth="1.6" strokeLinecap="round"/>
             </svg>
           )}

@@ -29,9 +29,12 @@ const certs = [
 export default function Experience() {
   return (
     <section id="experience" style={{ maxWidth: 1200, margin: '0 auto', padding: '100px 24px' }}>
-      <h2 className="reveal" style={{ margin: '0 0 48px', fontSize: 'clamp(40px,5vw,64px)', fontWeight: 700, letterSpacing: '-0.045em', lineHeight: 1 }}>
+      <h2 className="reveal" style={{ margin: '0 0 48px', fontSize: 'clamp(40px,5vw,64px)', fontWeight: 700, letterSpacing: '-0.045em', lineHeight: 1, textWrap: 'balance' }}>
         Experience.
       </h2>
+      <div style={{ padding: '16px 0', borderTop: '1px solid #d2d2d7', fontFamily: mono, fontSize: 13, color: '#6e6e73', letterSpacing: '0.02em' }}>
+        Belize Telemedia Limited
+      </div>
       {jobs.map((j, i) => (
         <div key={j.role} className="stagger-item" style={{ '--i': i,
           display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
@@ -39,7 +42,6 @@ export default function Experience() {
         }}>
           <div>
             <div style={{ fontFamily: mono, fontSize: 13, color: '#6e6e73' }}>{j.dates}</div>
-            <div style={{ marginTop: 8, fontSize: 15, color: '#6e6e73' }}>Belize Telemedia Limited</div>
           </div>
           <div style={{ gridColumn: 'span 2' }}>
             <h3 style={{ margin: '0 0 10px', fontSize: 26, fontWeight: 700, letterSpacing: '-0.03em' }}>{j.role}</h3>

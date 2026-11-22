@@ -26,5 +26,5 @@ export default function CountUp({ end, suffix = '', duration = 1400 }) {
     return () => io.disconnect();
   }, [end, duration]);
 
-  return <span ref={ref}>{val}{suffix}</span>;
+  return <span ref={ref} style={{ fontVariantNumeric: 'tabular-nums' }}>{val}{suffix}</span>;
 }

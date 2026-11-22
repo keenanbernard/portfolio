@@ -7,7 +7,7 @@ export default function Work() {
         display: 'flex', alignItems: 'baseline', justifyContent: 'space-between',
         flexWrap: 'wrap', gap: 16, marginBottom: 40,
       }}>
-        <h2 style={{ margin: 0, fontSize: 'clamp(40px,5vw,64px)', fontWeight: 700, letterSpacing: '-0.045em', lineHeight: 1 }}>
+        <h2 style={{ margin: 0, fontSize: 'clamp(40px,5vw,64px)', fontWeight: 700, letterSpacing: '-0.045em', lineHeight: 1, textWrap: 'balance' }}>
           Selected work.
         </h2>
         <div style={{ color: '#6e6e73', fontSize: 17 }}>Mobile · Web · AI</div>

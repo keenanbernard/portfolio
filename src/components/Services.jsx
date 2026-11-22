@@ -9,11 +9,11 @@ const services = [
 export default function Services() {
   return (
     <section id="services" style={{ maxWidth: 1200, margin: '0 auto', padding: '100px 24px' }}>
-      <h2 className="reveal" style={{ margin: 0, fontSize: 'clamp(40px,5vw,64px)', fontWeight: 700, letterSpacing: '-0.045em', lineHeight: 1, maxWidth: 760 }}>
+      <h2 className="reveal" style={{ margin: 0, fontSize: 'clamp(40px,5vw,64px)', fontWeight: 700, letterSpacing: '-0.045em', lineHeight: 1, maxWidth: 760, textWrap: 'balance' }}>
         Three things I do well.
       </h2>
       <p className="reveal" style={{ '--reveal-delay': '60ms', margin: '20px 0 48px', fontSize: 19, lineHeight: 1.55, color: '#6e6e73', maxWidth: 600 }}>
-        I care about software that holds up — reliable, properly built, and worth the investment. Most of all I love helping small businesses get online for the first time and seeing what a solid web presence does for them.
+        I care about software that holds up: reliable, properly built, worth the investment. Most of all I love helping small businesses get online for the first time and seeing what a solid web presence does for them.
       </p>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 0, borderTop: '1px solid #000' }}>
         {services.map((s, i) => (

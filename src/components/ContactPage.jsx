@@ -51,15 +51,16 @@ const sidebarLinks = [
 
 
 export default function ContactPage() {
-  const [name,     setName]     = useState('');
-  const [email,    setEmail]    = useState('');
-  const [msg,      setMsg]      = useState('');
-  const [type,     setType]     = useState(null);
-  const [budget,   setBudget]   = useState(null);
-  const [timeline, setTimeline] = useState(null);
-  const [sent,     setSent]     = useState(false);
-  const [loading,  setLoading]  = useState(false);
-  const [error,    setError]    = useState(false);
+  const [name,      setName]     = useState('');
+  const [email,     setEmail]    = useState('');
+  const [msg,       setMsg]      = useState('');
+  const [type,      setType]     = useState(null);
+  const [budget,    setBudget]   = useState(null);
+  const [timeline,  setTimeline] = useState(null);
+  const [honeypot,  setHoneypot] = useState('');
+  const [sent,      setSent]     = useState(false);
+  const [loading,   setLoading]  = useState(false);
+  const [error,     setError]    = useState(false);
 
   const firstName = name.trim().split(/\s+/)[0] || 'friend';
 
@@ -72,6 +73,7 @@ export default function ContactPage() {
 
     if (!cleanName || !cleanEmail || !cleanMsg) return;
     if (!EMAIL_RE.test(cleanEmail)) return;
+    if (honeypot) return;
 
     const safeType     = TYPES.includes(type)        ? type     : null;
     const safeBudget   = BUDGETS.includes(budget)     ? budget   : null;
@@ -125,7 +127,7 @@ export default function ContactPage() {
         <div style={{ fontFamily: mono, fontSize: 13, letterSpacing: '0.04em', color: '#6e6e73', marginBottom: 24 }}>
           CONTACT · BELMOPAN, BELIZE · UTC−6
         </div>
-        <h1 style={{ margin: 0, fontWeight: 700, fontSize: 'clamp(48px,7vw,96px)', lineHeight: 0.98, letterSpacing: '-0.05em', color: '#000', maxWidth: 900 }}>
+        <h1 style={{ margin: 0, fontWeight: 700, fontSize: 'clamp(48px,7vw,96px)', lineHeight: 0.98, letterSpacing: '-0.05em', color: '#000', maxWidth: 900, textWrap: 'balance' }}>
           Start with a message.
         </h1>
         <p style={{ margin: '28px 0 0', fontSize: 21, lineHeight: 1.45, color: '#6e6e73', maxWidth: 560 }}>
@@ -138,6 +140,11 @@ export default function ContactPage() {
         <div style={{ background: '#f5f5f7', borderRadius: 28, padding: 'clamp(28px,4vw,48px)' }}>
           {!sent ? (
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 36 }}>
+
+              {/* honeypot — bots fill this, humans never see it */}
+              <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }} aria-hidden="true">
+                <input type="text" name="website" value={honeypot} onChange={e => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
+              </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,220px),1fr))', gap: 16 }}>
                 <label style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -180,7 +187,7 @@ export default function ContactPage() {
                 <textarea
                   value={msg} onChange={e => setMsg(sanitize(e.target.value))}
                   required maxLength={2000} rows={6}
-                  placeholder="What should it do, who is it for, and what does a win look like?"
+                  placeholder="What should it do, who is it for? What does a win look like?"
                   className="form-textarea"
                   style={{ borderRadius: 14, padding: '14px 16px', fontSize: 17, lineHeight: 1.45, color: '#000', background: '#fff', resize: 'vertical' }}
                 />
@@ -190,7 +197,7 @@ export default function ContactPage() {
                 <span style={{ fontSize: 14, color: '#6e6e73' }}>Websites from $400 BZD. Apps and AI tools are quoted per project.</span>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 10 }}>
                   {error && (
-                    <span style={{ fontSize: 14, color: '#ff3b30' }}>Something went wrong — please try again.</span>
+                    <span style={{ fontSize: 14, color: '#ff3b30' }}>Something went wrong. Please try again.</span>
                   )}
                   <button type="submit" disabled={loading} className="btn-press" style={{ background: '#000', color: '#fff', border: 'none', height: 52, padding: '0 30px', borderRadius: 980, fontSize: 17, fontWeight: 500, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.6 : 1 }}>
                     {loading ? 'Sending…' : 'Send message'}
@@ -200,8 +207,8 @@ export default function ContactPage() {
 
             </form>
           ) : (
-            <div style={{ minHeight: 420, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 20 }}>
-              <div style={{ width: 56, height: 56, borderRadius: '50%', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ minHeight: 420, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 20, animation: 'fadeUp 400ms ease-out both' }}>
+              <div className="check-pulse" style={{ width: 56, height: 56, borderRadius: '50%', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
                   <path d="M5 11.5l4 4 8-9" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -210,7 +217,7 @@ export default function ContactPage() {
                 Thanks, {firstName}.
               </h2>
               <p style={{ margin: 0, fontSize: 19, lineHeight: 1.45, color: '#6e6e73', maxWidth: 440 }}>
-                Message received. I'll get back to you at {email} — usually the same day.
+                Message received. I'll get back to you at {email}, usually the same day.
               </p>
               <button
                 onClick={() => { setSent(false); setMsg(''); setError(false); }}
@@ -245,7 +252,7 @@ export default function ContactPage() {
           ))}
           <div style={{ marginTop: 32, display: 'flex', alignItems: 'center', gap: 10, fontSize: 14, color: '#6e6e73' }}>
             <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#30d158', flexShrink: 0 }} />
-            Taking new projects for 2027
+            Small projects can also have a big impact
           </div>
         </aside>
 

@@ -17,6 +17,7 @@ export default function Hero() {
             margin: 0, fontWeight: 700,
             fontSize: 'clamp(44px, 6.4vw, 84px)',
             lineHeight: 1.0, letterSpacing: '-0.045em', color: '#000',
+            textWrap: 'balance',
           }}>
             Apps, websites and AI. Built end to end.
           </h1>
