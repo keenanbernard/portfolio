@@ -138,6 +138,28 @@ a:hover { color: #000; }
   .nav-hamburger { display: flex; align-items: center; justify-content: center; }
 }
 
+/* ── Contact page ── */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+@media (max-width: 800px) {
+  .contact-layout { grid-template-columns: 1fr; }
+}
+
+.form-input, .form-textarea {
+  border: 1px solid #d2d2d7;
+  outline: none;
+  transition: border-color 150ms;
+  font-family: inherit;
+}
+.form-input:focus, .form-textarea:focus { border-color: #000; }
+
+.contact-direct-link { transition: opacity 160ms; color: #1d1d1f; }
+.contact-direct-link:hover { opacity: 0.5; }
+
 /* ── Rule 15: Nav link underline — exit 20% shorter, enter from left, exit to right ── */
 .nav-link {
   position: relative;

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { mono } from '../constants';
 
 export default function Hero() {
@@ -29,12 +30,12 @@ export default function Hero() {
             }}>
               See my work
             </a>
-            <a href="#contact" className="btn-press" style={{
+            <Link to="/contact" className="btn-press" style={{
               border: '1px solid #d2d2d7', color: '#000',
               padding: '14px 26px', borderRadius: 980, fontSize: 17, fontWeight: 500,
             }}>
               Start a project
-            </a>
+            </Link>
           </div>
         </div>
         <div className="hero-portrait" style={{

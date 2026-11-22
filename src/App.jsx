@@ -8,6 +8,7 @@ import Skills from './components/Skills';
 import Experience from './components/Experience';
 import OffTheClock from './components/OffTheClock';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 export default function App() {
   useScrollReveal();
@@ -23,6 +24,7 @@ export default function App() {
       <Experience />
       <OffTheClock />
       <Contact />
+      <Footer />
     </div>
   );
 }
