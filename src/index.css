@@ -62,10 +62,14 @@ a:hover { color: #000; }
 
 /* ── Rule 4: Scale to 0.97 on press. Rule 14: fast so it doesn't tween while held ── */
 .btn-press {
-  transition: transform 100ms ease-out;
+  transition: transform 100ms ease-out, opacity 160ms ease-out;
+}
+.btn-press:hover {
+  opacity: 0.78;
 }
 .btn-press:active {
   transform: scale(0.97);
+  opacity: 1;
   transition-duration: 70ms;
 }
 

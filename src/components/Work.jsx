@@ -80,6 +80,11 @@ export default function Work() {
             <p style={{ margin: '14px 0 0', fontSize: 17, lineHeight: 1.55, color: '#424245' }}>
               Pizza Friday in Belmopan. Four pizzas made from scratch, a menu, catering and gallery, an order-by-noon flow for Friday pick-up.
             </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 16 }}>
+              {['React', 'JavaScript', 'REST'].map(tag => (
+                <span key={tag} style={{ background: '#e8e8ed', borderRadius: 980, padding: '6px 14px', fontSize: 14 }}>{tag}</span>
+              ))}
+            </div>
             <a href="https://frommyoven.vercel.app" target="_blank" rel="noreferrer"
               className="btn-press"
               style={{ display: 'inline-block', marginTop: 20, fontSize: 17, fontWeight: 500, color: '#000' }}>
@@ -104,6 +109,11 @@ export default function Work() {
             <p style={{ margin: '14px 0 0', fontSize: 17, lineHeight: 1.55, color: '#424245' }}>
               Consultation, installation and repair for homes and businesses across Belize. Services, process and past work, with a one-tap call to book.
             </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 16 }}>
+              {['React', 'JavaScript', 'REST'].map(tag => (
+                <span key={tag} style={{ background: '#e8e8ed', borderRadius: 980, padding: '6px 14px', fontSize: 14 }}>{tag}</span>
+              ))}
+            </div>
             <a href="https://bernardselectrical.vercel.app" target="_blank" rel="noreferrer"
               className="btn-press"
               style={{ display: 'inline-block', marginTop: 20, fontSize: 17, fontWeight: 500, color: '#000' }}>
