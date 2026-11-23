@@ -11,6 +11,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Strip null bytes and non-printable control characters (keep tab, newline, CR)
 function sanitize(str) {
+  // eslint-disable-next-line no-control-regex
   return str.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '');
 }
 
@@ -25,6 +26,7 @@ function ChipGroup({ options, value, onChange }) {
             type="button"
             onClick={() => onChange(on ? null : label)}
             className="btn-press"
+            aria-pressed={on}
             style={{
               height: 44, padding: '0 20px', borderRadius: 980,
               fontSize: 15, fontWeight: 500, cursor: 'pointer',
@@ -173,7 +175,7 @@ export default function ContactPage() {
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-                <span style={{ fontSize: 14, fontWeight: 500 }}>Rough budget</span>
+                <span style={{ fontSize: 14, fontWeight: 500 }}>Rough budget <span style={{ fontWeight: 400, color: '#6e6e73' }}>(BZD)</span></span>
                 <ChipGroup options={BUDGETS} value={budget} onChange={setBudget} />
               </div>
 
@@ -194,7 +196,7 @@ export default function ContactPage() {
               </label>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
-                <span style={{ fontSize: 14, color: '#6e6e73' }}>Websites from $400 BZD. Apps and AI tools are quoted per project.</span>
+                <span style={{ fontSize: 14, color: '#6e6e73' }}>Websites from BZ$400 — includes up to 5 pages, mobile-responsive design, and 30 days of revisions. Apps and AI tools are quoted per project.</span>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 10 }}>
                   {error && (
                     <span style={{ fontSize: 14, color: '#ff3b30' }}>Something went wrong. Please try again.</span>

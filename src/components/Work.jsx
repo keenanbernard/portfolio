@@ -169,6 +169,9 @@ export default function Work() {
           <div style={{ marginTop: 'auto' }}>
             <div style={{ fontSize: 'clamp(88px,10vw,128px)', fontWeight: 800, letterSpacing: '-0.06em', lineHeight: 0.9 }}>9 hrs</div>
             <div style={{ color: '#6e6e73', fontSize: 17, marginTop: 8 }}>saved every hiring round</div>
+            <div style={{ color: '#6e6e73', fontSize: 14, marginTop: 10, lineHeight: 1.5, maxWidth: 320 }}>
+              Measured by timing HR's previous process (manual review, scoring and shortlisting of each CV) across two full hiring rounds before the agent was deployed.
+            </div>
           </div>
         </article>
       </div>
