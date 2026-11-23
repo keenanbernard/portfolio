@@ -196,7 +196,7 @@ export default function ContactPage() {
               </label>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
-                <span style={{ fontSize: 14, color: '#6e6e73' }}>Websites from BZ$400 — includes up to 5 pages, mobile-responsive design, and 30 days of revisions. Apps and AI tools are quoted per project.</span>
+                <span style={{ fontSize: 14, color: '#6e6e73' }}>Websites from BZ$400. Includes up to 5 pages, mobile-responsive design, 30 days of revisions. Apps and AI tools are quoted per project.</span>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 10 }}>
                   {error && (
                     <span style={{ fontSize: 14, color: '#ff3b30' }}>Something went wrong. Please try again.</span>
