@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { mono } from '../constants';
+import Nav from './Nav';
 import Footer from './Footer';
 
 const TYPES     = ['Mobile app', 'Website', 'AI tool', 'Something else'];
@@ -107,25 +108,14 @@ export default function ContactPage() {
   return (
     <div style={{ minHeight: '100vh', background: '#fff' }}>
 
-      <nav style={{
-        position: 'sticky', top: 0, zIndex: 50,
-        background: 'rgba(255,255,255,0.78)',
-        backdropFilter: 'saturate(180%) blur(20px)',
-        WebkitBackdropFilter: 'saturate(180%) blur(20px)',
-        borderBottom: '1px solid rgba(0,0,0,0.08)',
-      }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
-          <Link to="/" style={{ fontWeight: 700, fontSize: 17, letterSpacing: '-0.02em' }}>Keenan Bernard</Link>
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, color: '#424245' }}>
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M9 3L5 7l4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            Back to work
-          </Link>
-        </div>
-      </nav>
+      <Nav />
 
-      <header style={{ maxWidth: 1200, margin: '0 auto', padding: '96px 24px 56px' }}>
+      <header style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(48px,8vw,96px) 24px clamp(32px,5vw,56px)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 8, fontSize: 14, color: '#6e6e73', marginBottom: 32 }}>
+          <Link to="/" className="btn-press" style={{ color: '#6e6e73' }}>Home</Link>
+          <span>›</span>
+          <span style={{ color: '#1d1d1f' }}>Contact</span>
+        </div>
         <div style={{ fontFamily: mono, fontSize: 13, letterSpacing: '0.04em', color: '#6e6e73', marginBottom: 24 }}>
           CONTACT · BELMOPAN, BELIZE · UTC−6
         </div>

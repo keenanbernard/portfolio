@@ -78,7 +78,7 @@ export default function OffTheClock() {
             Structured online programs you can follow from anywhere, plus merch, all in my shop.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 28 }}>
-            <a href="https://kabernard-shop.fourthwall.com" target="_blank" rel="noreferrer"
+            <a href="https://trainwithkeenan.vercel.app" target="_blank" rel="noreferrer"
               className="btn-press"
               style={{ background: '#fff', color: '#000', padding: '14px 26px', borderRadius: 980, fontSize: 17, fontWeight: 500 }}>
               Browse programs

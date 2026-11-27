@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,21 +18,21 @@ export default function Nav() {
         height: 60, display: 'flex', alignItems: 'center',
         justifyContent: 'space-between', gap: 24,
       }}>
-        <a href="#top" style={{ fontWeight: 700, fontSize: 17, letterSpacing: '-0.02em' }}>
+        <Link to="/" style={{ fontWeight: 700, fontSize: 17, letterSpacing: '-0.02em' }}>
           Keenan Bernard
-        </a>
+        </Link>
 
         <div className="nav-links">
-          <a href="#work" className="nav-link" style={{ color: '#424245' }}>Work</a>
-          <a href="#services" className="nav-link" style={{ color: '#424245' }}>Services</a>
-          <a href="#skills" className="nav-link" style={{ color: '#424245' }}>Skills</a>
-          <a href="#experience" className="nav-link" style={{ color: '#424245' }}>Experience</a>
-          <a href="#contact" className="btn-press" style={{
+          <Link to="/#work" className="nav-link" style={{ color: '#424245' }}>Work</Link>
+          <Link to="/#services" className="nav-link" style={{ color: '#424245' }}>Services</Link>
+          <Link to="/#skills" className="nav-link" style={{ color: '#424245' }}>Skills</Link>
+          <Link to="/#experience" className="nav-link" style={{ color: '#424245' }}>Experience</Link>
+          <Link to="/#contact" className="btn-press" style={{
             background: '#000', color: '#fff',
             padding: '8px 16px', borderRadius: 980, fontWeight: 500,
           }}>
             Get in touch
-          </a>
+          </Link>
         </div>
 
         <button
@@ -53,11 +54,11 @@ export default function Nav() {
 
       {menuOpen && (
         <div className="mobile-menu">
-          <a href="#work" onClick={closeMenu}>Work</a>
-          <a href="#services" onClick={closeMenu}>Services</a>
-          <a href="#skills" onClick={closeMenu}>Skills</a>
-          <a href="#experience" onClick={closeMenu}>Experience</a>
-          <a href="#contact" onClick={closeMenu}>Get in touch</a>
+          <Link to="/#work" onClick={closeMenu}>Work</Link>
+          <Link to="/#services" onClick={closeMenu}>Services</Link>
+          <Link to="/#skills" onClick={closeMenu}>Skills</Link>
+          <Link to="/#experience" onClick={closeMenu}>Experience</Link>
+          <Link to="/#contact" onClick={closeMenu}>Get in touch</Link>
         </div>
       )}
     </nav>

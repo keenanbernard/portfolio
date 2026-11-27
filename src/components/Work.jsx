@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { mono } from '../constants';
 
 export default function Work() {
@@ -10,7 +11,10 @@ export default function Work() {
         <h2 style={{ margin: 0, fontSize: 'clamp(40px,5vw,64px)', fontWeight: 700, letterSpacing: '-0.045em', lineHeight: 1, textWrap: 'balance' }}>
           Selected work.
         </h2>
-        <div style={{ color: '#6e6e73', fontSize: 17 }}>Mobile · Web · AI</div>
+        <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
+          <div style={{ color: '#6e6e73', fontSize: 17 }}>Mobile · Web · AI</div>
+          <Link to="/projects" className="btn-press" style={{ fontSize: 14, color: '#6e6e73' }}>All projects ›</Link>
+        </div>
       </div>
 
       {/* DigiGo */}
@@ -130,6 +134,7 @@ export default function Work() {
             </div>
           </div>
         </article>
+
       </div>
 
       {/* RAG + Copilot */}
@@ -173,7 +178,19 @@ export default function Work() {
               Measured by timing HR's previous process (manual review, scoring and shortlisting of each CV) across two full hiring rounds before the agent was deployed.
             </div>
           </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+            {['Microsoft 365 Copilot', 'Power Automate', 'Outlook'].map(tag => (
+              <span key={tag} style={{ background: '#e8e8ed', borderRadius: 980, padding: '6px 14px', fontSize: 13 }}>{tag}</span>
+            ))}
+          </div>
         </article>
+      </div>
+
+      <div className="reveal" style={{ textAlign: 'center', marginTop: 48 }}>
+        <Link to="/projects" className="btn-press"
+          style={{ display: 'inline-block', background: '#000', borderRadius: 980, padding: '14px 28px', fontSize: 17, fontWeight: 500, color: '#fff' }}>
+          See all projects
+        </Link>
       </div>
     </section>
   );

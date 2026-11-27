@@ -7,6 +7,7 @@ import App from './App.jsx'
 import ContactPage from './components/ContactPage.jsx'
 import PrivacyPage from './components/PrivacyPage.jsx'
 import TermsPage from './components/TermsPage.jsx'
+import ProjectsPage from './components/ProjectsPage.jsx'
 import NotFound from './components/NotFound.jsx'
 import ScrollToTop from './ScrollToTop.jsx'
 
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
